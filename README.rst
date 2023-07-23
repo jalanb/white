@@ -1,15 +1,28 @@
-White: Black, but brighter (PEP8–inspired)
-==========================================
+White: Black, but opposite
+==========================
 
 `Black <https://github.com/ambv/black>`_ is an amazing tool for auto–formatting
-Python code in a style that I prefer. I use it in all my projects.
+Python code in a style that I dislike. I use it in all my projects.
 
-It has **one** configuration option — to change its default line–length of ``88``
-chars to, say, ``79``, like `PEP8 <http://pep8.org>`_ recommends.
+They made the wrong choice on strings, and it should be fixed
 
 -----------
 
-That is *exactly* what **white** does. It invokes ``$ black --line-length 79`` on your behalf.
+That is *exactly* what **white** does, it converts
+
+::
+
+    print(f"Hello {planet}")
+
+to
+
+::
+
+    print(f'Hello {planet}')
+
+
+It then invokes ``$ black -S --line-length 79`` on your behalf.
+
 
 
 Usage
@@ -29,5 +42,5 @@ Installation
 
 ::
 
-	$ pipenv install white
-	✨🍰✨
+	$ pip install white
+
